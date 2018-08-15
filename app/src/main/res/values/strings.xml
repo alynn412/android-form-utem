@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">My Form</string>
+    <!--(1)create  data-->
+    <string-array name="occupations">
+        <item>I.T</item>
+        <item>Admin</item>
+        <item>Marketing</item>
+        <item>Sales</item>
+        <item>Procurement</item>
+    </string-array>
+
+    <string-array name="state">
+        <item>Sabah</item>
+        <item>Selangor</item>
+        <item>WP Labuan</item>
+        <item>WP Putrajaya</item>
+        <item>Perak</item>
+    </string-array>
+
 </resources>

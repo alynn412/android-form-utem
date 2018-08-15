@@ -51,6 +51,19 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!--(2)create spinner-->
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner">
+    </Spinner>
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1"
+        android:id="@+id/autoComp" />
+
     <EditText
         android:id="@+id/main_messsageEditText"
         android:layout_width="match_parent"
