@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         cellEditText = findViewById(R.id.main_cellEditText);
         messageEditText = findViewById(R.id.main_messsageEditText);
         sendButton = findViewById(R.id.main_sendButton);
-
     }
 
     public void btnPressed(View view) {
@@ -44,24 +43,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    //(2-menu)to appear the menu on the screen
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //(3-menu)to act based on click menu item
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId())
         {
             case R.id.menu_about_us:
-            {
-                //call webactivity page
+                //call web activity page
                 Intent intent = new Intent(MainActivity.this, WebActivity.class);
                 startActivity(intent);
-                break;}
+                break;
+
             case R.id.menu_contact_us:
-            {
                 Toast.makeText(MainActivity.this, "The is a simple toast", Toast.LENGTH_LONG).show();
-                break;}
+                break;
+
             case R.id.menu_share:
-            {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
                 alertDialogBuilder.setTitle("Are you sure?");
                 alertDialogBuilder.setMessage("Are you sure you want to share this app?");
+
                 alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -76,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 alertDialogBuilder.show();
-                break;}
+                break;
+
             case R.id.menu_exit:
                 finish();
                 break;
@@ -84,11 +92,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
 
 }
